@@ -38,6 +38,9 @@ p {
   box-sizing: border-box;
   border-radius: 10px;
 }
+.avenger:hover {
+  transform: scale(1.1);
+}
 
 .avengerImg {
   opacity: 1;
