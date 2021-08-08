@@ -1,9 +1,8 @@
 import React from 'react';
 function AvengersList(props) {
-  console.log(props);
   return (
     <div className="avengers">
-      {props.avengers.map(avenger => {
+      {props.state.map(avenger => {
         return (
           <div className="avenger">
             <div>

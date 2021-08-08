@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import AvengersList from './container/avengerslistcontainer';
+import Main from './container/maincontainer';
 
 export default function App() {
-  return <AvengersList />;
+  return <Main />;
 }
