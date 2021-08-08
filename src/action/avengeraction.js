@@ -2,7 +2,8 @@ import {
   ADD_AVENGER,
   SELECTED_AVENGER,
   CLOSE_SELECTED_AVENGER,
-  LIKED_AVENGER
+  LIKED_AVENGER,
+  RATED_AVENGER
 } from './actionTypes';
 
 export const addAvenger = avenger => {
@@ -29,5 +30,12 @@ export const likedAvenger = avenger => {
   return {
     type: LIKED_AVENGER,
     likedAvenger: avenger
+  };
+};
+
+export const ratingAvenger = ratingDtl => {
+  return {
+    type: RATED_AVENGER,
+    ratingDtl: ratingDtl
   };
 };

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 function SearchBar(props) {
   return (
-    <div className="search">
+    <div id="search" className="search">
       <input
         type="text"
         className="searchBar"

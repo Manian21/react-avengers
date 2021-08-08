@@ -4,7 +4,8 @@ import {
   addAvenger,
   selectedAvenger,
   closeSelectedAvenger,
-  likedAvenger
+  likedAvenger,
+  ratingAvenger
 } from '../action/avengeraction';
 import { searchAvenger } from '../action/searchAction';
 import AvengersList from '../panels/Avengerslist';
@@ -17,7 +18,7 @@ const mapStateToProps = state => {
         avenger.name.toLowerCase().includes(state.search.value.toLowerCase())
       )
     : state.avengers.avengersList;
-  
+
   let avengers = { ...state.avengers, avengersList: avengersSearched };
   return {
     avengers: avengers
@@ -30,7 +31,8 @@ const mapDispatchToProps = dispatch => {
       addAvenger: avenger => dispatch(addAvenger(avenger)),
       selectedAvenger: avenger => dispatch(selectedAvenger(avenger)),
       closeSelectedAvenger: () => dispatch(closeSelectedAvenger()),
-      likedAvenger: avenger => dispatch(likedAvenger(avenger))
+      likedAvenger: avenger => dispatch(likedAvenger(avenger)),
+      ratingAvenger: ratingDetail => dispatch(ratingAvenger(ratingDetail))
     },
     searchDispatch: {
       search: search => dispatch(searchAvenger(search))

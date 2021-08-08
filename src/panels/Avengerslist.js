@@ -14,18 +14,20 @@ function AvengersList(props) {
 
       {props.state.avengersList.map(avenger => {
         return (
-          <div
-            id={avenger.id}
-            className="avenger"
-            onClick={() => {
-              props.dispatches.selectedAvenger(avenger);
-            }}
-          >
-            <div>
-              <img src={avenger.imageUrl} className="avengerImg" />
-              <span>{avenger.name}</span>
+          <a href="#search">
+            <div
+              id={avenger.id}
+              className="avenger"
+              onClick={() => {
+                props.dispatches.selectedAvenger(avenger);
+              }}
+            >
+              <div>
+                <img src={avenger.imageUrl} className="avengerImg" />
+                <span>{avenger.name}</span>
+              </div>
             </div>
-          </div>
+          </a>
         );
       })}
     </div>
