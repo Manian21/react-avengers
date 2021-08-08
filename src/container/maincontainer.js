@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addAvenger } from '../action/avengeraction';
 import AvengersList from '../panels/Avengerslist';
 import Navbar from '../panels/Navbar';
+import AvengerDetail from '../panels/AvengerDetail';
 
 const mapStateToProps = state => {
   return {
@@ -22,7 +23,12 @@ function Main(props) {
   return (
     <React.Fragment>
       <Navbar />
-      <AvengersList state={props.avengers} dispatches={props.avengerDispatch} />
+      <div className="mainContainer">
+        <AvengersList
+          state={props.avengers}
+          dispatches={props.avengerDispatch}
+        />
+      </div
     </React.Fragment>
   );
 }

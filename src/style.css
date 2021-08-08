@@ -36,7 +36,7 @@ p {
   text-align: center;
   box-sizing: border-box;
   border-radius: 10px;
-  margin: 20px 0px;
+  margin: 20px 20px;
 }
 .avenger:hover {
   transform: scale(1.1);
@@ -46,6 +46,7 @@ p {
   opacity: 1;
   height: 150px;
   width: 180px;
+  border-radius: 10px;
 }
 
 .navbar {
@@ -79,11 +80,41 @@ p {
   border-radius: 10px;
 }
 
-.searchBar:before{
-  content:'';
-  background-image: url()
+.searchBar:before {
+  content: '';
+  background-image: url();
 }
 
 input:focus {
   outline: none;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+.avengerDetail {
+  margin: 20px 20px;
+  background-color: blue;
+  border-radius: 10px;
+  max-width: 560px;
+  padding: 10px;
+}
+
+.avengerDetail * img.avengerImg {
+  border-radius: 10px;
+}
+
+.avengerContent {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.avengerProfileImgCont {
+  flex: 2;
+  margin: 0px 10px;
+}
+
+.avengerData {
+  display: block;
 }
