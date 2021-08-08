@@ -1,22 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import {
+  faTimes,
+  faHeart as fasHeart
+} from '@fortawesome/free-solid-svg-icons';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 function AvengerDetail(props) {
   return (
     <React.Fragment>
       <div className="avengerContent">
-        <div className="avengerProfileImgCont">
-          <img className="avengerImg" src={props.avenger.imageUrl} />
-          <FontAwesomeIcon
-            icon={faHeart}
-            size="lg"
-            transform="right-110 up-110"
-            color={'#d10f00'}
-          />
-        </div>
-        <div>
+        <div className="avengerProfileData">
           <span className="avengerData">Name: {props.avenger.name}</span>
           <span className="avengerData">Power: {props.avenger.power}</span>
           <span className="avengerData">
@@ -24,12 +18,28 @@ function AvengerDetail(props) {
           </span>
           <span className="avengerData">Weight: {props.avenger.weight}</span>
           <span className="avengerData">
-            Weight: {props.avenger.movies.join(', ')}
+            Weight: {props.avenger.movies && props.avenger.movies.join(', ')}
           </span>
+        </div>
+        <div className="avengerProfileImgCont">
+          <img className="avengerImg" src={props.avenger.imageUrl} />
           <FontAwesomeIcon
+            icon={props.avenger.liked ? fasHeart : farHeart}
+            size="lg"
+            transform="left-20 up-90"
+            color={'#d10f00'}
+            onClick={() => {
+              console.log('clicked');
+              props.dispatches.likedAvenger(props.avenger);
+            }}
+          />
+          <FontAwesomeIcon
+            onClick={() => {
+              props.dispatches.closeSelectedAvenger();
+            }}
             icon={faTimes}
             size="lg"
-            transform="right-250 up-100"
+            transform="right-60 up-100"
             color={'#d10f00'}
           />
         </div>

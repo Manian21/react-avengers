@@ -1,6 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addAvenger } from '../action/avengeraction';
+import {
+  addAvenger,
+  selectedAvenger,
+  closeSelectedAvenger,
+  likedAvenger
+} from '../action/avengeraction';
 import AvengersList from '../panels/Avengerslist';
 import Navbar from '../panels/Navbar';
 import AvengerDetail from '../panels/AvengerDetail';
@@ -14,7 +19,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     avengerDispatch: {
-      addAvenger: avenger => dispatch(addAvenger(avenger))
+      addAvenger: avenger => dispatch(addAvenger(avenger)),
+      selectedAvenger: avenger => dispatch(selectedAvenger(avenger)),
+      closeSelectedAvenger: () => dispatch(closeSelectedAvenger()),
+      likedAvenger: avenger => dispatch(likedAvenger(avenger))
     }
   };
 };
@@ -28,7 +36,7 @@ function Main(props) {
           state={props.avengers}
           dispatches={props.avengerDispatch}
         />
-      </div
+      </div>
     </React.Fragment>
   );
 }

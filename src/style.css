@@ -95,7 +95,7 @@ input:focus {
 
 .avengerDetail {
   margin: 20px 20px;
-  background-color: blue;
+  background-color: #207399;
   border-radius: 10px;
   max-width: 560px;
   padding: 10px;
@@ -105,16 +105,21 @@ input:focus {
   border-radius: 10px;
 }
 
-.avengerContent {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .avengerProfileImgCont {
-  flex: 2;
+  text-align: right;
+  width: 50%;
   margin: 0px 10px;
 }
 
 .avengerData {
   display: block;
+}
+
+.avengerProfileData {
+  max-width: 50%;
+  width: 35%;
+}
+
+.avengerContent {
+  display: flex;
 }
