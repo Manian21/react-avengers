@@ -97,7 +97,8 @@ input:focus {
   margin: 20px 20px;
   background-color: #207399;
   border-radius: 10px;
-  max-width: 560px;
+  min-width: 560px;
+  width: 560px;
   padding: 10px;
 }
 
@@ -122,4 +123,22 @@ input:focus {
 
 .avengerContent {
   display: flex;
+}
+
+.default-color {
+  color: #d10f00;
+}
+
+.avenger-close-button {
+  position: relative;
+  bottom: 85%;
+  left: 25%;
+  font-size: 24px;
+}
+
+.avenger-like-button {
+  position: relative;
+  bottom: 75%;
+  right: 10%;
+  font-size: 24px;
 }

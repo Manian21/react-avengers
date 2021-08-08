@@ -23,37 +23,32 @@ function AvengerDetail(props) {
         </div>
         <div className="avengerProfileImgCont">
           <img className="avengerImg" src={props.avenger.imageUrl} />
-          <FontAwesomeIcon
-            icon={props.avenger.liked ? fasHeart : farHeart}
-            size="lg"
-            transform="left-20 up-90"
-            color={'#d10f00'}
-            onClick={() => {
-              console.log('clicked');
+          <a
+            href="#"
+            className="default-color avenger-like-button"
+            onClick={event => {
               props.dispatches.likedAvenger(props.avenger);
+              event.preventDefault();
             }}
-          />
-          <FontAwesomeIcon
-            onClick={() => {
+          >
+            {!props.avenger.liked ? (
+              <i class="fa fa-heart-o" />
+            ) : (
+              <i class="fa fa-heart" />
+            )}
+          </a>
+          <a
+            href="#"
+            className="default-color avenger-close-button"
+            onClick={event => {
               props.dispatches.closeSelectedAvenger();
+              event.preventDefault();
             }}
-            icon={faTimes}
-            size="lg"
-            transform="right-60 up-100"
-            color={'#d10f00'}
-          />
+          >
+            <i class="fa fa-close" />
+          </a>
         </div>
       </div>
-
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/tCuRbIInrOo"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      />
     </React.Fragment>
   );
 }

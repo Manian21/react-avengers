@@ -4,7 +4,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 function SearchBar(props) {
   return (
     <div className="search">
-      <input type="text" className="searchBar" placeholder="Search Avengers" />
+      <input
+        type="text"
+        className="searchBar"
+        placeholder="Search Avengers"
+        onChange={event => {
+          props.search(event.target.value);
+        }}
+      />
       <FontAwesomeIcon
         icon={faSearch}
         size="lg"

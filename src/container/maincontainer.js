@@ -6,13 +6,21 @@ import {
   closeSelectedAvenger,
   likedAvenger
 } from '../action/avengeraction';
+import { searchAvenger } from '../action/searchAction';
 import AvengersList from '../panels/Avengerslist';
 import Navbar from '../panels/Navbar';
 import AvengerDetail from '../panels/AvengerDetail';
 
 const mapStateToProps = state => {
+  let avengersSearched = state.search.value
+    ? state.avengers.avengersList.filter(avenger =>
+        avenger.name.toLowerCase().includes(state.search.value.toLowerCase())
+      )
+    : state.avengers.avengersList;
+  
+  let avengers = { ...state.avengers, avengersList: avengersSearched };
   return {
-    avengers: state.avengers
+    avengers: avengers
   };
 };
 
@@ -23,6 +31,9 @@ const mapDispatchToProps = dispatch => {
       selectedAvenger: avenger => dispatch(selectedAvenger(avenger)),
       closeSelectedAvenger: () => dispatch(closeSelectedAvenger()),
       likedAvenger: avenger => dispatch(likedAvenger(avenger))
+    },
+    searchDispatch: {
+      search: search => dispatch(searchAvenger(search))
     }
   };
 };
@@ -30,7 +41,7 @@ const mapDispatchToProps = dispatch => {
 function Main(props) {
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar dispatches={props.searchDispatch} />
       <div className="mainContainer">
         <AvengersList
           state={props.avengers}

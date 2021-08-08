@@ -7,7 +7,6 @@ import {
 } from '../action/actionTypes';
 
 const reducer = (state = Avengers_Initial_State, action) => {
-  console.log(state);
   switch (action.type) {
     case ADD_AVENGER:
       return state;

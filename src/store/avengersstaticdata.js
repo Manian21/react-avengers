@@ -1,3 +1,5 @@
+export const Search_Initial_State = {};
+
 export const Avengers_Initial_State = {
   selectedAvenger: null,
   avengersList: [
